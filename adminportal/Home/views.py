@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse , Http404  , HttpResponseRedirect , HttpResponseNotFound
 from django.urls import reverse
-from Home import models
+from Home.models import Student
 import datetime
 
 # from django.template.loader import render_to_string
@@ -26,6 +26,8 @@ def contact(request):
         phonenumber = request.POST.get('phonenumber')
         message = request.POST.get('message')
         print(fullname , email , phonenumber, message)
+        ins = Student(name=fullname, email=email , number = phonenumber, textbox= message)
+        ins.save()
 
         
     return render(request,'Home/contact.html',{'email':email})

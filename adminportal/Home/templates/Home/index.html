@@ -1,7 +1,7 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+   {% load static %}
+
    <head>
       <!-- basic -->
       <meta charset="utf-8">
@@ -15,7 +15,6 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- bootstrap css -->
-      {% load static %}
 
       <link rel="stylesheet" href="{% static "Home/bootstrap.min.css" %}">
       <!-- style css -->
@@ -25,7 +24,7 @@
       <link rel="stylesheet" href="{% static "Home/responsive.css" %}">
 
       <!-- fevicon -->
-      <link rel="icon" href="{% static "images/fevicon.png" %} type="image/gif" />
+      <link rel="icon" href="{% static "images/fevicon.png" %}" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="{% static "Home/jquery.mCustomScrollbar.min.css" %}">
 
@@ -308,6 +307,12 @@
             </div>
          </div>
       </div>
+      <!-- 21:9 aspect ratio -->
+ <!-- 16:9 aspect ratio -->
+ <div class="embed-responsive embed-responsive-4by3">
+   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sW9npZVpiMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ </div>
+ 
       <!-- end testimonial -->
       <!--  footer -->
       <footer id="contact">
@@ -360,14 +365,14 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
-      <script src="../../js/jquery.min.js"></script>
-      <script src="../../js/popper.min.js"></script>
-      <script src="../../js/bootstrap.bundle.min.js"></script>
-      <script src="../../js/jquery-3.0.0.min.js"></script>
-      <script src="../../js/plugin.js"></script>
+      <script src="{% static "js/jquery.min.js" %}"></script>
+      <script src="{% static "js/popper.min.js" %}"></script>
+      <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+      <script src="{% static "js/jquery-3.0.0.min.js" %}"></script>
+      <script src="{% static "js/plugin.js" %}"></script>
       <!-- sidebar -->
-      <script src="../../js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="../../js/custom.js"></script>
+      <script src="{% static "js/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+      <script src="{% static "js/custom.js" %}"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
    </body>
 </html>

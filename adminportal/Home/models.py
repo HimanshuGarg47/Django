@@ -12,3 +12,7 @@ class Student(models.Model):
     email = models.EmailField(max_length=50)
     number = models.CharField(max_length=10)
     textbox = models.TextField(max_length=200)
+    
+    
+    def __str__(self) -> str:
+        return self.name + " " + self.email
