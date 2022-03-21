@@ -1,12 +1,58 @@
 .tcm-logo
 {
-    width:100px;
-    height:70px;
+    width:64px;
+    height:40px;
     /* opacity:; */
 }
 
+
+  .sub-title {
+    margin: 50px auto;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: uppercase;
+  }
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    color:rgb(209, 104, 43) !important;
+}
 .navbar-dark .navbar-nav .nav-link{
     color:rgba(255, 255 ,255,1);
-    font-size: 20px;
     text-align: center;
 }
+
+/* Responsive Full Background Image Using CSS
+ * Tutorial URL: http://sixrevisions.com/css/responsive-background-image/
+*/
+/* .newfe  p, a ,  blockquote{
+    color:white;
+} */
+.newfe {
+    /* Location of the image */
+    background-image: url(../images/zoomimg.png);
+    
+    /* Image is centered vertically and horizontally at all times */
+   
+    /* Makes the image fixed in the viewport so that it doesn't move when 
+       the content height is greater than the image height */
+    /* background-attachment: fixed; */
+    
+    /* This is what makes the background image rescale based on its container's size */
+    /* background-size: cover; */
+    
+    /* Pick a solid background color that will be displayed while the background image is loading */
+    /* background-color:#464646; */
+    
+    /* SHORTHAND CSS NOTATION
+     * background: url(background-photo.jpg) center center cover no-repeat fixed;
+     */
+  }
+  
+  /* For mobile devices */
+  @media only screen and (max-width: 767px) {
+    .newfe {
+      /* The file size of this background image is 93% smaller
+       * to improve page load speed on mobile internet connections */
+      background-image: url(../images/zoomimg.png);
+    }
+      }

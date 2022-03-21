@@ -9,22 +9,37 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "Home/style.css" %}">
+   <link rel="stylesheet" href="{% static "Home/main.css" %}">
+    <link rel="stylesheet" href="{% static "Home/animation.css" %}"> 
+
     <title>TCM</title>
+
     <style>
-     /* .navbar-dark .navbar-nav .nav-link{
-    color:rgba(255, 255 ,255,1);
-} */
-    </style>
+      .nav-item a:hover {
+          color: rgb(194, 92, 33) !important;
+          background-color: rgb(212, 209, 209);
+          cursor: pointer;
+      }
+
+      .bd-footer a{
+        color:#fbfbfb;
+      }
+  </style>
   </head>
   <body>
 
     <!--  <div class="spinner-border" role="status">
       <span class="visually-hidden">Loading...</span>
     </div> -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-stick-light justify-content-center" style="background-color: #3a3e41;">
+    {% comment %} <div class="alert alert-success mb-0 p-0" role="alert">
+      <h4 class="alert-heading">Well done!</h4>
+       {% endcomment %}
+    </div>
+    <nav class="mt-0 navbar navbar-expand-lg navbar-dark sticky-top navbar-stick-light justify-content-center"  style="background-color: #3a3e41;">    <!-- style="background-image: url({% static "images/zoomimg.png" %});">--> 
+ 
       <div class="container-fluid">
 
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{% url 'try' %}">
         <img src="{% static "images/logo_single.png" %}" alt="TCM Logo" class="ms-3 d-inline-block align-text-top tcm-logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,42 +62,318 @@
                 <li class="nav-item mx-2">
                     <a class="nav-link" href="#">Announcements</a>
                 </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
+               
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="#">Alumni</a>
               </li>
-                <li class="nav-item mx-2 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Events
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li> 
+               
             </ul>
         </div>
 </div>
     </nav>
 
 
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="{% static "images/couresel-img.webp" %}" class="d-block w-100" alt="...">
+
+    <!-- section with animation  -->
+    {% comment %} <section class="page_slider main_slider">
+      <div class="flexslider" data-nav="true" data-dots="false">
+          <ul class="slides">
+              <li class="ds text-center slide1">
+                  <span class="flexslider-overlay"></span>
+                  <img src="{% static "images/01.jpeg" %}" alt="">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-12 itro_slider">
+                              <div class="intro_layers_wrapper">
+                                  <div class="intro_layers">
+
+                                      <div class="intro_layer" data-animation="slideRight">
+                                          <h4 class="text-uppercase intro_featured_word">
+                                              Creative<br>Computing<br>Society
+                                          </h4>
+                                      </div>
+                                  </div>
+                                  <!-- eof .intro_layers -->
+                              </div>
+                              <!-- eof .intro_layers_wrapper -->
+                          </div>
+                          <!-- eof .col-* -->
+                      </div>
+                      <!-- eof .row -->
+                  </div>
+                  <!-- eof .container -->
+              </li>
+              <li class="ds text-center slide2">
+                  <span class="flexslider-overlay"></span>
+                  <img src="{% static "images/01.jpeg" %}" alt="">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-12 itro_slider">
+                              <div class="intro_layers_wrapper">
+                                  <div class="intro_layers">
+                                      <div class="intro_layer" data-animation="fadeIn">
+                                          <h3 class="text-lowercase intro_before_featured_word">
+                                              We help unleash
+                                          </h3>
+                                      </div>
+                                      <div class="intro_layer" data-animation="fadeIn">
+                                          <h2 class="text-uppercase intro_featured_word">
+                                              the tech geek
+                                          </h2>
+                                      </div>
+                                      <div class="intro_layer" data-animation="pullDown">
+                                          <p class="text-uppercase intro_after_featured_word">within you</p>
+                                      </div>
+                                  <!-- eof .intro_layers -->
+                                  </div>
+                              <!-- eof .intro_layers_wrapper -->
+                              </div>
+                          <!-- eof .col-* -->
+                          </div>
+                      <!-- eof .row -->
+                      </div>
+                  <!-- eof .container -->
+                  </div>
+              </li>
+              <li class="ds text-center slide3">
+                  <span class="flexslider-overlay"></span>
+                  <img src="{% static "images/01.jpeg" %}" alt="">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-12 itro_slider">
+                              <div class="intro_layers_wrapper">
+                                  <div class="intro_layers">
+                                      <div class="intro_layer" data-animation="fadeInRight">
+                                          <h2 class="text-uppercase intro_featured_word light">
+                                              Learn
+                                          </h2>
+                                      </div>
+                                      <div class="intro_layer" data-animation="fadeIn">
+                                          <h2 class="text-uppercase intro_featured_word bold">
+                                              Code
+                                          </h2>
+                                      </div>
+                                      <div class="intro_layer" data-animation="fadeIn">
+                                          <h2 class="text-uppercase intro_featured_word">
+                                              Collaborate
+                                          </h2>
+                                      </div>
+                                  </div>
+                                  <!-- eof .intro_layers -->
+                              </div>
+                              <!-- eof .intro_layers_wrapper -->
+                          </div>
+                          <!-- eof .col-* -->
+                      </div>
+                      <!-- eof .row -->
+                  </div>
+                  <!-- eof .container -->
+              </li>
+
+          </ul>
+      </div>
+      <!-- eof flexslider -->
+      <div class="flexslider-bottom d-none d-xl-block">
+          <a href="#about" class="mouse-button animated floating"></a>
+      </div>
+  </section> {% endcomment %}
+
+
+
+
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner" style="color:white;">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="{% static "images/01.jpeg" %}" class="d-block w-100" alt="...">
+          <div class="d-flex justify-content-center  align-content-center carousel-caption" style="color:white;font-weight:5rem; font-size:7rem">
+           
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
         </div>
-        <!-- <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="{% static "images/01.jpeg" %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block" style="position:relative; bottom:300px;">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
         </div>
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-        </div> -->
+          <img src="{% static "images/01.jpeg" %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>  
+
+
+
+    {% comment %} end of couresel {% endcomment %}
+
+
+
+<img src="{% static "images/vertical_line.png" %}" class="mx-auto d-block mt-5 mb-0" alt="...">
+    <div class="px-4 py-5 mb-5 mt-0 text-center"  style="/* position: relative; bottom: 388px; color:white; */" >
+      {% comment %} <img class="d-block mx-auto mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> {% endcomment %}
+      <div class="col-lg-6 mx-auto">
+        {% comment %} font-weight utilities are abbreviated as .fw-*. {% endcomment %}
+      <h1 class="display-6 fw-normal" >Great leaders in great companies recognize that the ability to constantly learn, innovate, and improve is vital to their success</h1>
+        <p class="lead mb-4 fw-lighter" >Creative Computing Society (CCS) is one of the oldest and the most prestigious societies of Thapar Institute of Engineering and Technology. With the knowledge and experience of 15 years, the society aims to create and promote a healthy technical environment at TIET.</p>
+      
       </div>
     </div>
+    
+
+    <img src="{% static "images/vertical_line.png" %}" class="mx-auto d-block mt-5 mb-0" alt="...">
+
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="{% static "images/zoomimg.png" %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
+          <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            {% comment %} <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img src="{% static "images/vertical_line.png" %}" class="mx-auto d-block mt-5 mb-0" alt="...">
+    {% comment %} <script>
+      $(function(){
+        $("#nav-footer").load('../../../static/footer.html');
+      });
+      </script>
+    <div id="nav-footer">
+
+    </div> {% endcomment %}
+
+
+    <!-- <div class=" my-5"    style="width: 100%; height: auto; background-image: url({% static "images/zoomimg.png" %});">
+    </div> -->
+
+
+    <div class="divider-30 d-none d-xl-block"></div>
+    <section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 text-center">
+                  <h1>Contact Us!</h1>
+                  {% comment %} <div class="divider-15 d-none d-xl-block"></div> {% endcomment %}
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="ls s-pt-0 s-pb-100 s-pb-md-130 s-py-lg-100 contact2">
+    <div class="divider-15 d-none d-xl-block"></div>
+    <div class="pb-2">
+        <div class="row c-mb-30 c-mb-md-50">
+            <div class="col-md-6 text-center">
+                <div class="border-icon">
+                    <div class="teaser-icon">
+                        <img src="{% static "images/icon3.png" %}" alt="">
+                    </div>
+                </div>
+                <h6>
+                    Write Us
+                </h6>
+                <p class="teaser-content">
+                        <a href="mailto:himan.gargcoder@gmail.com">Click to mail us!</a>
+                    <br> himan.gargcoder@gmail.com
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="border-icon">
+                    <div class="teaser-icon">
+                        <img src="{% static "images/icon2.png" %}" alt="">
+                    </div>
+                </div>
+                <h6>
+                    Visit Us
+                </h6>
+                <p class="teaser-content">
+                        <a href="https://www.google.com/maps/place/Thapar+Institute+of+Engineering+and+Technology/@30.3529716,76.3688491,17z/data=!3m1!4b1!4m5!3m4!1s0x391028abdad39763:0xa7f6232cbef903a4!8m2!3d30.3529716!4d76.3710378">Get Directions!</a>
+                    <br>Thapar Polytechnic College Patiala, India
+                </p>
+            </div>
+        </div>
+        <div class="divider-60 d-none d-xl-block"></div>
+
+    </div>
+</section>
+
+
+
+
+
+
+    <footer class="bd-footer py-2 mt-5 bg-dark">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-3 mb-3">
+            <a class="d-inline-flex align-items-center mb-2 link-light text-decoration-none" href="/" aria-label="Bootstrap">
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="d-block me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg> -->
+              <img src="{% static "images/logo_single.png" %}" alt="TCM Logo" class="ms-2 d-inline-block align-text-top tcm-logo" style="width:68px;height:38px">
+
+              <span class="fs-5">TCM</span>
+            </a>
+            <ul class="list-unstyled small text-muted">
+              <li class="mb-2">Designed and built with all the love in the world by the <a href="/docs/5.1/about/team/">Bootstrap team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</li>
+              <li class="mb-2">Code licensed <a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</li>
+              <li class="mb-2">Currently v5.1.3.</li>
+            </ul>
+          </div>
+          
+          <div class="col-6 col-lg-2 mb-1">
+            <h5>TCM Club</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="/docs/5.1/getting-started/">Getting started</a></li>
+              <li class="mb-2"><a href="/docs/5.1/examples/starter-template/">Donate</a></li>
+              {% comment %} contribute for TCM Club portal !improve website {% endcomment %}
+              <li class="mb-2"><a href="/docs/5.1/getting-started/webpack/">Contribute</a></li>
+              <li class="mb-2"><a href="/docs/5.1/getting-started/parcel/">Open Source</a></li>
+            </ul>
+          </div>
+         
+          <div class="col-6 col-lg-2 mb-1">
+            <h5>Resources</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="https://github.com/twbs/bootstrap/issues">Issues</a></li>
+              <li class="mb-2"><a href="https://github.com/twbs/bootstrap/discussions">Workshop</a></li>
+              <li class="mb-2"><a href="https://github.com/sponsors/twbs">Hackathons</a></li>
+              <li class="mb-2"><a href="https://opencollective.com/bootstrap">Team</a></li>
+              <li class="mb-2"><a href="https://opencollective.com/bootstrap">Join Stack Overflow</a></li>
+
+              <li class="mb-2"><a href="https://bootstrap-slack.herokuapp.com/">Slack</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
