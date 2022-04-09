@@ -1,5 +1,11 @@
 from django.contrib import admin
-from .models import Book
+from .models import Book, Author
 
 # Register your models here.
-admin.site.register(Book)
+class BookAdmin(admin.ModelAdmin):
+    # readonly_fields = ("slug",)
+    prepopulated_fields = {"slug":("title",)}
+    list_filter = ("author","rating",)
+    list_display = ("title","author")
+admin.site.register(Author)
+admin.site.register(Book, BookAdmin)
