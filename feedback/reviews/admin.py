@@ -3,5 +3,6 @@ from .models import Review
 
 # Register your models here.
 class ReviewAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(Review)
+    list_display = ("user_name","rating",)
+
+admin.site.register(Review,ReviewAdmin)
